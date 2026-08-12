@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no">
+
+<meta name="theme-color" content="#82458f">
+
+<title>For Alyssa ♡</title>
+
+<style>
+
+/* ==============================
+   RESET
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background: #261036;
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* ==============================
+   FRONT PAGE
+============================== */
+
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,255,255,.28),
+            transparent 28%
+        ),
+        linear-gradient(
+            160deg,
+            #ffd9e7 0%,
+            #ee9cbe 35%,
+            #ce73aa 58%,
+            #8c4c91 80%,
+            #351943 100%
+        );
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+.intro.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-content {
+    width: 100%;
+    padding: 25px;
+}
+
+.front-rose {
+    width: 250px;
+    height: 320px;
+
+    object-fit: cover;
+
+    display: block;
+    margin: 0 auto 28px;
+
+    border-radius: 50%;
+
+    filter:
+        drop-shadow(
+            0 25px 35px
+            rgba(40,0,40,.4)
+        );
+
+    animation:
+        roseFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes roseFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            scale(1.03);
+    }
+}
+
+.intro-small {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.78);
+    margin-bottom: 12px;
+}
+
+.intro h1 {
+    font-size: 48px;
+    font-weight: normal;
+    font-style: italic;
+
+    text-shadow:
+        0 5px 25px
+        rgba(50,0,50,.3);
+
+    margin-bottom: 8px;
+}
+
+.intro p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 28px;
+}
+
+.open {
+    padding: 14px 38px;
+
+    border-radius: 50px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.65);
+
+    background:
+        rgba(255,255,255,.13);
+
+    color: white;
+
+    font-size: 14px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: .3s;
+}
+
+.open:active {
+    transform: scale(.92);
+}
+
+
+/* ==============================
+   MAIN BACKGROUND
+============================== */
+
+.main {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffb8d3 0%,
+            #f197bf 17%,
+            #d878ae 34%,
+            #b35f9f 51%,
+            #8b4b91 67%,
+            #603676 84%,
+            #29143f 100%
+        );
+}
+
+
+/* MOVING LIGHT */
+
+.main::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -30%;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.25),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(255,190,230,.20),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(180,100,255,.20),
+            transparent 35%
+        );
+
+    animation:
+        backgroundMove
+        12s
+        ease-in-out
+        infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes backgroundMove {
+
+    from {
+        transform:
+            translate(-3%, -2%)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(3%, 2%)
+            scale(1.08);
+    }
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.hero-content {
+    position: relative;
+}
+
+.hero-content::before {
+    content: "";
+
+    position: absolute;
+
+    width: 340px;
+    height: 340px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,235,245,.25),
+            transparent 68%
+        );
+
+    filter: blur(15px);
+
+    z-index: -1;
+
+    animation:
+        heroGlow
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes heroGlow {
+
+    0%,100% {
+        opacity: .4;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.85);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.15);
+    }
+}
+
+.hero-small {
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255,255,255,.8);
+
+    margin-bottom: 18px;
+}
+
+.hero h2 {
+    font-size:
+        clamp(44px,14vw,76px);
+
+    font-weight: normal;
+
+    font-style: italic;
+
+    line-height: .95;
+
+    text-shadow:
+        0 8px 30px
+        rgba(50,0,50,.25);
+}
+
+.alyssa {
+    display: block;
+
+    margin-top: 10px;
+}
+
+.hero-line {
+    width: 65px;
+    height: 1px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    margin: 28px auto;
+}
+
+.hero p {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    color:
+        rgba(255,255,255,.78);
+}
+
+.scroll {
+    margin-top: 55px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    opacity: .7;
+
+    animation:
+        scrollDown
+        2s
+        ease-in-out
+        infinite;
+}
+
+@keyframes scrollDown {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+/* ==============================
+   FLOATING DECORATIONS
+============================== */
+
+.floating {
+    position: absolute;
+
+    z-index: 8;
+
+    pointer-events: none;
+
+    animation:
+        floating
+        6s
+        ease-in-out
+        infinite;
+}
+
+.f1 {
+    left: 8%;
+    top: 17%;
+    font-size: 27px;
+}
+
+.f2 {
+    right: 8%;
+    top: 25%;
+    font-size: 24px;
+    animation-delay: 1s;
+}
+
+.f3 {
+    left: 12%;
+    top: 52%;
+    font-size: 21px;
+    animation-delay: 2s;
+}
+
+.f4 {
+    right: 13%;
+    top: 60%;
+    font-size: 29px;
+    animation-delay: 3s;
+}
+
+.f5 {
+    left: 20%;
+    top: 75%;
+    font-size: 18px;
+    animation-delay: 1.5s;
+}
+
+.f6 {
+    right: 20%;
+    top: 78%;
+    font-size: 18px;
+    animation-delay: 2.5s;
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+
+        opacity: .35;
+    }
+
+    50% {
+        transform:
+            translateY(-22px)
+            rotate(8deg);
+
+        opacity: .9;
+    }
+}
+
+
+/* ==============================
+   FLOATING HEARTS
+============================== */
+
+.heart {
+    position: absolute;
+
+    z-index: 9;
+
+    color:
+        rgba(255,235,245,.8);
+
+    pointer-events: none;
+
+    animation:
+        heartFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+.h1 {
+    left: 25%;
+    top: 20%;
+    font-size: 18px;
+}
+
+.h2 {
+    right: 25%;
+    top: 18%;
+    font-size: 13px;
+    animation-delay: 1s;
+}
+
+.h3 {
+    left: 18%;
+    top: 40%;
+    font-size: 24px;
+    animation-delay: 2s;
+}
+
+.h4 {
+    right: 18%;
+    top: 47%;
+    font-size: 17px;
+    animation-delay: 3s;
+}
+
+.h5 {
+    left: 30%;
+    top: 68%;
+    font-size: 13px;
+    animation-delay: 1.5s;
+}
+
+.h6 {
+    right: 30%;
+    top: 72%;
+    font-size: 21px;
+    animation-delay: 2.5s;
+}
+
+@keyframes heartFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            scale(1);
+
+        opacity: .2;
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            scale(1.15);
+
+        opacity: .9;
+    }
+}
+
+
+/* ==============================
+   GLOWING PARTICLES
+============================== */
+
+.sparkle {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 15px
+        rgba(255,225,255,.95);
+
+    z-index: 7;
+
+    animation:
+        sparkle
+        4s
+        ease-in-out
+        infinite;
+}
+
+.s1 {
+    top: 15%;
+    left: 15%;
+}
+
+.s2 {
+    top: 22%;
+    left: 48%;
+    animation-delay: .8s;
+}
+
+.s3 {
+    top: 30%;
+    right: 15%;
+    animation-delay: 1.4s;
+}
+
+.s4 {
+    top: 45%;
+    left: 28%;
+    animation-delay: 2s;
+}
+
+.s5 {
+    top: 55%;
+    right: 25%;
+    animation-delay: .5s;
+}
+
+.s6 {
+    top: 70%;
+    left: 15%;
+    animation-delay: 2.5s;
+}
+
+.s7 {
+    top: 78%;
+    right: 15%;
+    animation-delay: 1.7s;
+}
+
+@keyframes sparkle {
+
+    0%,100% {
+        opacity: .1;
+
+        transform:
+            scale(.5);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.7);
+    }
+}
+
+
+/* ==============================
+   FALLING PETALS
+============================== */
+
+.petal {
+    position: fixed;
+
+    top: -40px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation:
+        fall
+        linear
+        forwards;
+}
+
+@keyframes fall {
+
+    0% {
+        transform:
+            translateY(-40px)
+            translateX(0)
+            rotate(0);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .9;
+    }
+
+    30% {
+        transform:
+            translateY(30vh)
+            translateX(45px)
+            rotate(120deg);
+    }
+
+    60% {
+        transform:
+            translateY(65vh)
+            translateX(-35px)
+            rotate(250deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(40px)
+            rotate(420deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ==============================
+   LETTER SECTION
+============================== */
+
+.letter-section {
+    position: relative;
+
+    z-index: 20;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(62,25,80,.05),
+            #2b123f 20%,
+            #241034 100%
+        );
+
+    padding:
+        100px 20px 130px;
+}
+
+.title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.title small {
+    font-family: Arial, sans-serif;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 9px;
+
+    color:
+        rgba(255,220,240,.7);
+}
+
+.title h3 {
+    margin-top: 10px;
+
+    font-size: 34px;
+
+    font-weight: normal;
+
+    font-style: italic;
+}
+
+
+/* ==============================
+   LETTER
+============================== */
+
+.letter {
+    max-width: 650px;
+
+    margin: auto;
+
+    padding:
+        42px 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf8,
+            #f7e9f0
+        );
+
+    color: #4b343e;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.3);
+
+    position: relative;
+
+    transform:
+        rotate(-.3deg);
+}
+
+.letter::before {
+    content: "♡";
+
+    position: absolute;
+
+    right: 18px;
+    top: 12px;
+
+    color: #ba6685;
+
+    font-size: 20px;
+}
+
+.letter p {
+    font-size: 15px;
+
+    line-height: 2;
+
+    margin-bottom: 23px;
+}
+
+.opening {
+    font-size: 23px !important;
+
+    font-style: italic;
+
+    color: #704354;
+}
+
+.signature {
+    text-align: right;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    margin-top: 35px;
+
+    color: #704354;
+}
+
+
+/* ==============================
+   GOOD LUCK
+============================== */
+
+.goodluck {
+    max-width: 650px;
+
+    margin:
+        90px auto 0;
+
+    padding:
+        50px 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,180,220,.2),
+            rgba(125,70,160,.3)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.2);
+}
+
+.goodluck .flower {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.goodluck h3 {
+    font-size: 36px;
+
+    font-weight: normal;
+
+    font-style: italic;
+
+    color: white;
+
+    margin-bottom: 25px;
+}
+
+.goodluck p {
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color:
+        rgba(255,245,250,.85);
+
+    margin-bottom: 18px;
+}
+
+.goodluck .important {
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    font-style: italic;
+
+    color: white;
+
+    margin-top: 28px;
+}
+
+
+/* ==============================
+   FINAL
+============================== */
+
+.final {
+    text-align: center;
+
+    margin-top: 120px;
+}
+
+.final-rose {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    filter:
+        drop-shadow(
+            0 20px 30px
+            rgba(0,0,0,.3)
+        );
+
+    animation:
+        finalRose
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes finalRose {
+
+    0%,100% {
+        transform: scale(.95);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+.final h3 {
+    font-size: 32px;
+
+    font-weight: normal;
+
+    font-style: italic;
+
+    margin-top: 10px;
+}
+
+.final p {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    color:
+        rgba(255,235,245,.65);
+
+    margin-top: 15px;
+}
+
+.footer {
+    margin-top: 55px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255,220,240,.4);
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media(max-width:600px) {
+
+    .front-rose {
+        width: 225px;
+        height: 285px;
+    }
+
+    .intro h1 {
+        font-size: 43px;
+    }
+
+    .letter {
+        padding:
+            38px 21px;
+    }
+
+    .letter p {
+        font-size: 15px;
+    }
+
+    .floating {
+        font-size: 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     FRONT PAGE
+========================================= -->
+
+<section
+    class="intro"
+    id="intro">
+
+    <div class="intro-content">
+
+        <img
+            src="rose.jpg"
+            class="front-rose"
+            alt="Rose">
+
+        <div class="intro-small">
+            A little something for
+        </div>
+
+        <h1>
+            Alyssa ♡
+        </h1>
+
+        <p>
+            from Daiske
+        </p>
+
+        <button
+            class="open"
+            onclick="openSite()">
+
+            Open ♡
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="main">
+
+
+<!-- FLOATING FLOWERS -->
+
+<div class="floating f1">🌹</div>
+<div class="floating f2">🌷</div>
+<div class="floating f3">🌸</div>
+<div class="floating f4">🌹</div>
+<div class="floating f5">🌷</div>
+<div class="floating f6">🌺</div>
+
+
+<!-- FLOATING HEARTS -->
+
+<div class="heart h1">♡</div>
+<div class="heart h2">♥</div>
+<div class="heart h3">♡</div>
+<div class="heart h4">♥</div>
+<div class="heart h5">♡</div>
+<div class="heart h6">♥</div>
+
+
+<!-- SPARKLES -->
+
+<div class="sparkle s1"></div>
+<div class="sparkle s2"></div>
+<div class="sparkle s3"></div>
+<div class="sparkle s4"></div>
+<div class="sparkle s5"></div>
+<div class="sparkle s6"></div>
+<div class="sparkle s7"></div>
+
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Welcome to my little world
+        </div>
+
+        <h2>
+
+            For my
+
+            <span class="alyssa">
+                Alyssa
+            </span>
+
+        </h2>
+
+        <div class="hero-line"></div>
+
+        <p>
+            my love · my baby · my girl · my binibini
+        </p>
+
+        <div class="scroll">
+            scroll slowly ↓
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     LETTER
+========================================= -->
+
+<section class="letter-section">
+
+    <div class="title">
+
+        <small>
+            Something I wanted you to know
+        </small>
+
+        <h3>
+            My dearest Alyssa
+        </h3>
+
+    </div>
+
+
+    <article class="letter">
+
+        <p class="opening">
+            My love,
+        </p>
+
+        <p>
+            I don't think words will ever be enough to
+            explain what you mean to me, but I still want
+            to try.
+        </p>
+
+        <p>
+            I wasn't looking for someone when you came
+            into my life. I wasn't waiting for someone
+            either. You simply came into my life,
+            unexpectedly, and somehow became someone
+            incredibly important to me.
+        </p>
+
+        <p>
+            Sometimes I think about how beautiful it is
+            that God allowed our paths to cross.
+            I didn't plan it. I didn't expect it.
+            You simply became part of my life,
+            and I'm so grateful that you did.
+        </p>
+
+        <p>
+            Alyssa, I want you to know something.
+            I chose you.
+        </p>
+
+        <p>
+            I chose you because you accepted me for
+            who I am. You didn't ask me to become
+            someone else before I could be loved by you.
+        </p>
+
+        <p>
+            You saw me as Daiske, with my flaws,
+            imperfections, overthinking, weird sides,
+            and all the little things that make me
+            who I am.
+        </p>
+
+        <p>
+            And somehow, you still accepted me.
+        </p>
+
+        <p>
+            That means more to me than I could ever
+            properly explain.
+        </p>
+
+        <p>
+            You made me feel like I could simply be
+            myself around you.
+        </p>
+
+        <p>
+            And I want to give that same feeling back
+            to you. You don't have to be perfect for me.
+            You don't have to prove that you're enough.
+        </p>
+
+        <p>
+            You are enough simply by being Alyssa.
+        </p>
+
+        <p>
+            I love the little things about you.
+            The way you talk, the way you laugh,
+            your little habits, and all those tiny
+            things you probably don't even notice
+            about yourself.
+        </p>
+
+        <p>
+            Somehow, those little things became some
+            of my favorite things in the world.
+        </p>
+
+        <p>
+            You were worth it all along.
+        </p>
+
+        <p>
+            And if I were given the chance to go back
+            and choose all over again, knowing
+            everything I know now...
+        </p>
+
+        <p>
+            I would still choose you.
+        </p>
+
+        <p>
+            Again.
+            And again.
+            And again.
+        </p>
+
+        <p>
+            I am incredibly grateful that God placed
+            you into my life.
+        </p>
+
+        <p>
+            I love you, Lysa.
+        </p>
+
+        <div class="signature">
+
+            Always choosing you,<br>
+
+            Daiske ♡
+
+        </div>
+
+    </article>
+
+
+
+<!-- =========================================
+     GOOD LUCK
+========================================= -->
+
+<section class="goodluck">
+
+    <div class="flower">
+        🌹 🌷 💗
+    </div>
+
+    <h3>
+        Good luck, my love.
+    </h3>
+
+    <p>
+        Take a deep breath, baby.
+        Don't let the nerves make you forget
+        how capable you are.
+    </p>
+
+    <p>
+        Trust yourself.
+        Trust what you've learned.
+        Read carefully, take your time,
+        and give it your best.
+    </p>
+
+    <p>
+        Whatever happens, I want you to know
+        that I'm already proud of you.
+    </p>
+
+    <p class="important">
+        You've got this, Alyssa.
+        I believe in you. ♡
+    </p>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL
+========================================= -->
+
+<section class="final">
+
+    <img
+        src="rose.jpg"
+        class="final-rose"
+        alt="Rose">
+
+    <h3>
+        I love you, Alyssa.
+    </h3>
+
+    <p>
+        Today, tomorrow, and every day
+        I get to choose you.
+    </p>
+
+    <div class="footer">
+        Made with love by Daiske ♡
+    </div>
+
+</section>
+
+
+</section>
+
+</main>
+
+
+
+<script>
+
+/* =========================================
+   OPEN WEBSITE
+========================================= */
+
+function openSite() {
+
+    document
+        .getElementById("intro")
+        .classList
+        .add("hide");
+
+    document.body.style.overflow = "auto";
+
+    startPetals();
+
+}
+
+
+/* =========================================
+   FALLING OBJECTS
+========================================= */
+
+function createFallingThing() {
+
+    const thing =
+        document.createElement("div");
+
+    thing.className = "petal";
+
+    const objects = [
+        "♡",
+        "♥",
+        "🌸",
+        "🌷",
+        "🌹",
+        "💗",
+        "💞",
+        "✿"
+    ];
+
+    const chosen =
+        objects[
+            Math.floor(
+                Math.random() *
+                objects.length
+            )
+        ];
+
+    thing.innerHTML = chosen;
+
+    thing.style.left =
+        Math.random() * 100 + "vw";
+
+    thing.style.fontSize =
+        (12 + Math.random() * 14) + "px";
+
+    thing.style.animationDuration =
+        (6 + Math.random() * 7) + "s";
+
+    thing.style.color =
+        "rgba(255,235,245,.85)";
+
+    document.body.appendChild(thing);
+
+    setTimeout(
+        () => {
+            thing.remove();
+        },
+        15000
+    );
+}
+
+
+function startPetals() {
+
+    setInterval(
+        createFallingThing,
+        350
+    );
+
+}
+
+
+/* =========================================
+   START LOCKED
+========================================= */
+
+document.body.style.overflow =
+    "hidden";
+
+</script>
+
+</body>
+</html>
